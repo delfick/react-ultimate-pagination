@@ -3,9 +3,9 @@ import {getPaginationModel, ITEM_TYPES} from 'ultimate-pagination';
 
 const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, onChange) => {
   const onItemClickFunctionFactory = (value) => {
-    return () => {
+    return (event) => {
       if (onChange && currentPage !== value) {
-        onChange(value);
+        onChange(value, event);
       }
     }
   };
